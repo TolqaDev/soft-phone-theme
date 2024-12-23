@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>ELEMAN PHONE CLOUD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./assets/css/style.css" rel="stylesheet" type="text/css">
+    <style>
+        #btnToolCall.btn-red:disabled, #btnToolCall.btn-red[disabled] {
+            background: linear-gradient(262.92deg, #94343a 6.49%, #94343a 108.73%);
+        }
+
+        #btn-incomming-decline:disabled, #btn-incomming-decline[disabled] {
+            background: linear-gradient(262.92deg, #94343a 6.49%, #94343a 108.73%);
+        }
+
+        #btn-incomming-accept:disabled, #btn-incomming-accept[disabled] {
+            background: linear-gradient(262.92deg, #336b25 6.49%, #336b25 108.73%);
+        }
+
+        #btnToolCall.btn-green:disabled, #btnToolCall.btn-green[disabled] {
+            background: linear-gradient(262.92deg, #40882f 6.49%, #40882f 108.73%);
+        }
+
+        .top-bar-title {
+            font-size: 14px !important;
+        }
+
+        .min-no-calls {
+            color: #525252;
+            width: 176px;
+            text-align: center;
+            padding-top: 3px;
+        }
+    </style>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+</head>
+<body>
+<div id="stringee_clound" class="overflow-hidden" style="top: 45px; left: 50px;margin-top: 0; margin-right: 0; margin-bottom: 0; padding: 0; display: block; background: transparent; position: fixed; z-index: 16000015; border-radius: 10px; width: 287px; height: 538px; box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .15); border: 1px solid #E9EBED; box-sizing: content-box; ">
+    <div id="app-minimize" class="cursor-pointer">
+        <div class="wrap-info-minimize display-flex justify-content-space-between font-size-16">
+            <div class="time bg-pink border-radius-16 color-white display-none">00:28</div>
+            <div class="line-vertical display-none"></div>
+            <div class="phone line-height-26 display-none">0966050828</div>
+            <div class="min-no-calls">No calls</div>
+        </div>
+    </div>
+    <div id="app">
+        <section class="wrap-top-bar height-40 position-absolute top-0 width-100-percent">
+            <div class="top-bar-status color-red">Bağlantı Yok</div>
+            <div class="text-center top-bar-title"></div>
+            <div class="wrap-action-top-right float-right mr position-absolute right-15 top-10">
+                <div class="wrapper-dropdown wrapper-dropdown-call">
+                    <div id="dropdown-option-call" class="wrapper-dropdown-3" tabindex="1">
+                        <span id="routingTypeLabelActived">
+                            <img src="./assets/pictures/icon-browser.png" class="icon-option-active" title="Đổ cuộc gọi đến app và sipphone">
+                        </span>
+                        <ul class="dropdown">
+                            <li data-value="1"><a href="javascript:void(0)">
+                                <img src="./assets/pictures/icon-browser.png" class="icon-option" title="Đổ cuộc gọi đến app và sipphone">Lorem İpsum</a>
+                            </li>
+                            <li data-value="2"><a href="javascript:void(0)">
+                                <img src="./assets/pictures/icon-phone.png" class="icon-option" title="Đổ cuộc gọi đến số điện thoại">Lorem İpsum</a>
+                            </li>
+                            <li data-value="3"><a href="javascript:void(0)">
+                                <img src="./assets/pictures/icon-app.png" class="icon-option" title="Đổ cuộc gọi đến app">Lorem İpsum</a>
+                            </li>
+                            <li data-value="4"><a href="javascript:void(0)">
+                                <img src="./assets/pictures/icon-ipphone.png" class="icon-option" title="Đổ cuộc gọi đến ipphone">Lorem İpsum</a>
+                            </li>
+                        </ul>
+                    </div>
+                    ​
+                </div>
+            </div>
+        </section>
+        <section id="page-calling" class="page display-none">
+            <section class="wrap-status p-l-r-20 top-0 position-relative display-flex">
+                <div class="wrap-status-text line-height-30"><span class="status-text">Giden Arama..</span>
+                    <div class="line-red-short"></div>
+                </div>
+                <div class="wrap-status-time line-height-30 position-absolute right-0">
+                    <span class="status-time"></span>
+                </div>
+            </section>
+            <section class="wrap-info p-20">
+                <div class="info-name pb-10">+90 (500) 000 00-00</div>
+                <div class="wrap-location">
+                    <span class="location-via">Kişi Bilgisi Bulunamadı...</span>
+                </div>
+            </section>
+            <div class="line-dotted"></div>
+            <section class="wrap-action display-flex justify-content-space-between">
+                <button id="btnMic" class="action-call text-center flex-basis p-10 bg-white border-none">
+                    <img class="icon" src="./assets/pictures/icon-mic.svg">
+                    <img class="icon-on display-none" src="./assets/pictures/icon-mic-off.svg">
+                </button>
+                <button id="btnHold" class="action-call text-center flex-basis p-10 bg-white border-none">
+                    <img class="icon" src="./assets/pictures/icon-pause.svg">
+                    <img class="icon-on display-none" src="./assets/pictures/icon-pause-red.svg">
+                </button>
+                <button id="btnKeypadInCall" class="action-call text-center flex-basis p-10 bg-white border-none">
+                    <img src="./assets/pictures/icon-pad-gray.svg">
+                </button>
+            </section>
+            <section class="wrap-background bg-gradient-purple height-350 width-100-percent">
+                <div class="wrap-avatar-round text-center">
+                    <img src="https://play-lh.googleusercontent.com/Gcs0I-7dFTE-D9ti5JT3a-c1m5TfDxrZfD_SHUJ6n1OjltPR4VEId7-v6xaECM9yaZU" class="mt-80">
+                </div>
+            </section>
+            <section class="wrap-diapad-when-calling display-none">
+                <div class="wrap-typing-number pl-15 pr-15 mt-10 mb-10 display-flex justify-content-space-between">
+                    <input type="text" value="" placeholder="*101#" class="font-size-24 color-black border-none">
+                    <button class="btn-close border-none bg-transparent"><img src="./assets/pictures/icon-close.svg"></button>
+                </div>
+                <div class="wrap-diapad mb-20 diapad-size-medium">
+                    <div class="diapad-row">
+                        <button class="diapad-key" id="diapad-key-dtmf-1"><span class="diapad-key-number">                        1                    </span>
+                        </button>
+                        <button class="diapad-key" id="diapad-key-dtmf-2"><span class="diapad-key-number">                        2                    </span>
+                        </button>
+                        <button class="diapad-key" id="diapad-key-dtmf-3"><span class="diapad-key-number">                        3                    </span>
+                        </button>
+                    </div>
+                    <div class="diapad-row">
+                        <button class="diapad-key" id="diapad-key-dtmf-4"><span class="diapad-key-number">                        4                    </span>
+                        </button>
+                        <button class="diapad-key" id="diapad-key-dtmf-5"><span class="diapad-key-number">                        5                    </span>
+                        </button>
+                        <button class="diapad-key" id="diapad-key-dtmf-6"><span class="diapad-key-number">                        6                    </span>
+                        </button>
+                    </div>
+                    <div class="diapad-row">
+                        <button class="diapad-key" id="diapad-key-dtmf-7"><span class="diapad-key-number">                        7                    </span>
+                        </button>
+                        <button class="diapad-key" id="diapad-key-dtmf-8"><span class="diapad-key-number">                        8                    </span>
+                        </button>
+                        <button class="diapad-key" id="diapad-key-dtmf-9"><span class="diapad-key-number">                        9                    </span>
+                        </button>
+                    </div>
+                    <div class="diapad-row">
+                        <button class="diapad-key" id="diapad-key-dtmf-star"><span class="diapad-key-number">                        *                    </span>
+                        </button>
+                        <button class="diapad-key" id="diapad-key-dtmf-0"><span class="diapad-key-number">                        0                    </span>
+                        </button>
+                        <button class="diapad-key" id="diapad-key-dtmf-sharp"><span class="diapad-key-number">                        #                    </span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section id="page-incomming-call" class="page display-none">
+            <div class="incomming-call-info box-shadow1 border-radius-18 bg-gradient-purple overflow-hidden mb-20">
+                <div class="wrap-info-text bg-white pt-20 pb-20">
+                    <section class="wrap-status p-l-r-20 top-0 position-relative display-flex ">
+                        <div class="wrap-status-text line-height-30"><span
+                                class="status-text">Gelen Arama..</span>
+                            <div class="line-red-short"></div>
+                        </div>
+                    </section>
+                    <section class="wrap-info p-20">
+                        <div class="info-name pb-10">+90 (500) 000 00-00</div>
+                        <div class="wrap-location">
+                            <span class="location-via">Kişi Kaydı Bulunamadı</span>
+                        </div>
+                    </section>
+                </div>
+                <section class="wrap-background bg-gradient-purple height-350 width-100-percent">
+                    <div class="wrap-avatar-round text-center">
+                        <img src="./assets/pictures/avatar.png" class="mt-50">
+                    </div>
+                </section>
+            </div>
+            <div class="incomming-call-action display-flex justify-content-space-between">
+                <button id="btn-incomming-decline" class="btn-action-incomming btn-round btn-red btn-size-55 display-table-cell border-none">
+                    <img src="./assets/pictures/icon-phone.svg" class="icon" style="transform: rotate(135deg)">
+                </button>
+                <img src="./assets/pictures/icon-dotted-end.svg">
+                <img src="./assets/pictures/icon-dotted-call.svg">
+                <button id="btn-incomming-accept" class="btn-action-incomming btn-round btn-green btn-size-55 display-table-cell border-none">
+                    <img src="./assets/pictures/icon-phone.svg" class="icon">
+                </button>
+            </div>
+        </section>
+        <section id="page-diapad" class="page">
+            <div class="wrap-typing-number pl-15 pr-15 mt-10 mb-30 display-flex justify-content-space-between">
+                <input type="text" class="font-size-24 color-black border-none" id="diapad-input" placeholder="+905000000000">
+                <button class="btn-close border-none bg-transparent" id="diapad-clear">
+                    <img src="./assets/pictures/icon-close.svg">
+                </button>
+            </div>
+            <div class="wrap-diapad mb-10">
+                <div class="diapad-row">
+                    <button class="diapad-key" id="diapad-key-1" data-value="1">
+                        <span class="diapad-key-number">1</span>
+                        <span class="diapad-key-text"></span>
+                    </button>
+                    <button class="diapad-key" id="diapad-key-2" data-value="2">
+                        <span class="diapad-key-number">2</span>
+                        <span class="diapad-key-text">ABC</span>
+                    </button>
+                    <button class="diapad-key" id="diapad-key-3" data-value="3">
+                        <span class="diapad-key-number"> 3 </span>
+                        <span class="diapad-key-text"> DEF </span>
+                    </button>
+                </div>
+                <div class="diapad-row">
+                    <button class="diapad-key" id="diapad-key-4" data-value="4">
+                        <span class="diapad-key-number"> 4 </span>
+                        <span class="diapad-key-text"> GHI </span>
+                    </button>
+                    <button class="diapad-key" id="diapad-key-5" data-value="5">
+                        <span class="diapad-key-number"> 5 </span>
+                        <span class="diapad-key-text"> JKL </span>
+                    </button>
+                    <button class="diapad-key" id="diapad-key-6" data-value="6">
+                        <span class="diapad-key-number"> 6 </span>
+                        <span class="diapad-key-text"> MNO </span>
+                    </button>
+                </div>
+                <div class="diapad-row">
+                    <button class="diapad-key" id="diapad-key-7" data-value="7">
+                        <span class="diapad-key-number"> 7 </span>
+                        <span class="diapad-key-text"> PQRS </span>
+                    </button>
+                    <button class="diapad-key" id="diapad-key-8" data-value="8">
+                        <span class="diapad-key-number"> 8 </span>
+                        <span class="diapad-key-text"> TUV </span>
+                    </button>
+                    <button class="diapad-key" id="diapad-key-9" data-value="9">
+                        <span class="diapad-key-number"> 9 </span>
+                        <span class="diapad-key-text"> WXYZ </span>
+                    </button>
+                </div>
+                <div class="diapad-row">
+                    <button class="diapad-key" id="diapad-key-star" data-value="*">
+                        <span class="diapad-key-number"> * </span>
+                        <span class="diapad-key-text"></span>
+                    </button>
+                    <button class="diapad-key" id="diapad-key-0" data-value="0">
+                        <span class="diapad-key-number"> 0 </span>
+                        <span class="diapad-key-text" style="font-size: 18px;"><span>
+                        </span></span>
+                    </button>
+                    <button class="diapad-key" id="diapad-key-plus" data-value="+">
+                        <span class="diapad-key-number"> + </span>
+                        <span class="diapad-key-text"></span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section id="page-activity" class="page display-none">
+            <div class="line-dotted"></div>
+            <div class="wrap-activity-list">
+                <div class="wrap-activity-list-content">
+                    <div class="activity-date">20/06/2018</div>
+                    <div class="wrap-activity-group">
+                        <div class="wrap-activity-item display-flex">
+                            <div class="activity-icon"><img src="./assets/pictures/icon-call-out.svg"></div>
+                            <div class="activity-info">
+                                <div class="activity-phone">+84 966050824</div>
+                                <div class="activity-via">Giangle via Stringee</div>
+                            </div>
+                            <div class="activity-time"> 6:40 PM</div>
+                            <div class="activity-more"><img src="./assets/pictures/icon-arrow-point-to-right.svg"></div>
+                        </div>
+                        <div class="wrap-activity-item display-flex">
+                            <div class="activity-icon"><img src="./assets/pictures/icon-call-in.svg"></div>
+                            <div class="activity-info">
+                                <div class="activity-phone">+84 966050824</div>
+                                <div class="activity-via">Giangle via Stringee</div>
+                            </div>
+                            <div class="activity-time"> 6:40 PM</div>
+                            <div class="activity-more"><img src="./assets/pictures/icon-arrow-point-to-right.svg"></div>
+                        </div>
+                    </div>
+                    <div class="activity-date">20/06/2018</div>
+                    <div class="wrap-activity-group">
+                        <div class="wrap-activity-item display-flex">
+                            <div class="activity-icon"><img src="./assets/pictures/icon-call-miss.svg"></div>
+                            <div class="activity-info">
+                                <div class="activity-phone">+84 966050824</div>
+                                <div class="activity-via">Giangle via Stringee</div>
+                            </div>
+                            <div class="activity-time"> 6:40 PM</div>
+                            <div class="activity-more"><img src="./assets/pictures/icon-arrow-point-to-right.svg"></div>
+                        </div>
+                        <div class="wrap-activity-item display-flex">
+                            <div class="activity-icon"><img src="./assets/pictures/icon-call-out.svg"></div>
+                            <div class="activity-info">
+                                <div class="activity-phone">+84 966050824</div>
+                                <div class="activity-via">Giangle via Stringee</div>
+                            </div>
+                            <div class="activity-time"> 6:40 PM</div>
+                            <div class="activity-more"><img src="./assets/pictures/icon-arrow-point-to-right.svg"></div>
+                        </div>
+                        <div class="wrap-activity-item display-flex">
+                            <div class="activity-icon"><img src="./assets/pictures/icon-call-out.svg"></div>
+                            <div class="activity-info">
+                                <div class="activity-phone">+84 966050824</div>
+                                <div class="activity-via">Giangle via Stringee</div>
+                            </div>
+                            <div class="activity-time"> 6:40 PM</div>
+                            <div class="activity-more"><img src="./assets/pictures/icon-arrow-point-to-right.svg"></div>
+                        </div>
+                    </div>
+                    <div class="activity-date">20/06/2018</div>
+                    <div class="wrap-activity-group">
+                        <div class="wrap-activity-item display-flex">
+                            <div class="activity-icon"><img src="./assets/pictures/icon-call-out.svg"></div>
+                            <div class="activity-info">
+                                <div class="activity-phone">+84 966050824</div>
+                                <div class="activity-via">Giangle via Stringee</div>
+                            </div>
+                            <div class="activity-time"> 6:40 PM</div>
+                            <div class="activity-more"><img src="./assets/pictures/icon-arrow-point-to-right.svg"></div>
+                        </div>
+                        <div class="wrap-activity-item display-flex">
+                            <div class="activity-icon"><img src="./assets/pictures/icon-call-out.svg"></div>
+                            <div class="activity-info">
+                                <div class="activity-phone">+84 966050824</div>
+                                <div class="activity-via">Giangle via Stringee</div>
+                            </div>
+                            <div class="activity-time"> 6:40 PM</div>
+                            <div class="activity-more"><img src="./assets/pictures/icon-arrow-point-to-right.svg"></div>
+                        </div>
+                        <div class="wrap-activity-item display-flex">
+                            <div class="activity-icon"><img src="./assets/pictures/icon-call-out.svg"></div>
+                            <div class="activity-info">
+                                <div class="activity-phone">+84 966050824</div>
+                                <div class="activity-via">Giangle via Stringee</div>
+                            </div>
+                            <div class="activity-time"> 6:40 PM</div>
+                            <div class="activity-more"><img src="./assets/pictures/icon-arrow-point-to-right.svg"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="page-menu" class="wrap-toolbar-bottom position-absolute bottom-0 height-100 width-100-percent box-shadow2 z-index-100 bg-white">
+            <div class="wrap-toolbar text-center display-flex justify-content-space-evenly">
+                <button id="btnToolActivity" class="toolbar-item active display-table-cell border-none bg-transparent">
+                    <img src="./assets/pictures/icon-list-gray.svg" class="icon-gray">
+                    <img src="./assets/pictures/icon-list.svg" class="icon">
+                </button>
+                <button id="btnToolCall" class="btn-action-incomming btn-round btn-green btn-size-55 display-table-cell border-none mt-15-negative">
+                    <img src="./assets/pictures/icon-phone.svg" class="icon-gray">
+                    <img src="./assets/pictures/icon-phone.svg" class="icon">
+                </button>
+
+                <button id="btnToolEndCall" class="btn-action-incomming btn-round btn-red btn-size-55 display-table-cell border-none mt-15-negative display-none">
+                    <img src="./assets/pictures/icon-phone.svg" class="icon-gray" />
+                    <img src="./assets/pictures/icon-phone.svg" class="icon" />
+                </button>
+                <button id="btnToolPad" class="btn-action-incomming btn-round btn-green btn-size-55 display-table-cell border-none mt-15-negative display-none">
+                    <img src="./assets/pictures/icon-pad.svg" class="icon-gray">
+                    <img src="./assets/pictures/icon-pad.svg" class="icon">
+                </button>
+
+                <button id="btnToolSetting" class="toolbar-item display-table-cell border-none bg-transparent">
+                    <img src="./assets/pictures/icon-setting-gray.svg" class="icon-gray">
+                    <img src="./assets/pictures/icon-setting.svg" class="icon">
+                </button>
+            </div>
+        </section>
+    </div>
+</div>
+</body>
+</html>
